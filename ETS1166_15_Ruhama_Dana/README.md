@@ -1,0 +1,1 @@
+Tech army is an aspiring software engineering team in AASTU 2015 E.C batch. I serve as the secretary of the team and as a person and an aspiring software engineer, I plan to be a motivated and hardworking student.
