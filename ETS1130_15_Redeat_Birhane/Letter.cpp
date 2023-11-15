@@ -1,8 +1,12 @@
+#include <iostream>
+#include <ctype.h>
+using namespace std;
+
 int main() {
     char inputLetter;
 
 /*this is a code that changes an e tered letter
-to its uppercase or lowercase*/
+to its uppercase or lowercase;*/
     cout << "Enter a letter: ";
     cin >> inputLetter;
     if (isalpha(inputLetter)) {
