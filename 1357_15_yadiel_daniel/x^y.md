@@ -11,4 +11,4 @@ Algorithm
 4.Input the value of y from the user.
 5.Calculate (x^y) using the pow() function from the <cmath> library in C++.
 6.Display the result.
-7.End
+7.End 
