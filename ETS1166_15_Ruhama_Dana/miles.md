@@ -5,3 +5,4 @@ Operation
 One time fuel capacity of the vehicle*miles per one gallon 
  Output
 The distance the vehicle can travel without refuelling 
+pseudo code
