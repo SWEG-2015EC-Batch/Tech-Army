@@ -3,7 +3,7 @@ problem analysis
 2.Computation: Calculate (x^y) using the appropriate mathematical operation or function.
 3.Output: Display the computed result to the user.
 
-Algorithm
+Algorithm the result.
 1.Start
 2.Declare variables x, y, result as double.
 3.Input the value of x from the user.
