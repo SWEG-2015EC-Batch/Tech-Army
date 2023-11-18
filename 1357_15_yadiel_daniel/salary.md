@@ -11,15 +11,22 @@ Output
 	gross salary
 	net salary 
 	bonus payment 
-Algorithm:
-1.Start
-2.Declare variables: name (string), weeklyHours, bonusRate, baseSalary, grossSalary, pensionRate, taxRate, netSalary, bonusPayment as appropriate data types (floats or strings).
-3.Input employee name, weeklyHours, bonusRate, and baseSalary.
-4.Calculate the gross salary:grossSalary = baseSalary + (weeklyHours * bonusRate).
-5.Calculate the pension deduction:pensionDeduction = grossSalary * 0.05 (5% pension rate).
-6.Calculate the taxable amount:taxableAmount = grossSalary - pensionDeduction.
-7.Calculate the tax deduction:taxDeduction = taxableAmount * 0.15 (15% tax rate).
-8.Calculate the net salary:netSalary = grossSalary - (pensionDeduction + taxDeduction).
-9.Calculate the bonus payment:bonusPayment = weeklyHours * bonusRate.
-10.Display the employee's name, gross salary, net salary, and bonus payment.
-11.End
+Pseudocode
+1. Start the program.
+2. Declare variables: workhr as a float, brate as a float, bsalary as a float, gsalary as a float, nsalary as a float, bpay as a float, and name as a string.
+3. Display a message asking the user to enter their full name.
+4. Read the value for name from the user.
+5. Display a message asking the user to enter their weekly working hours.
+6. Read the value for workhr from the user.
+7. Display a message asking the user to enter their base salary.
+8. Read the value for bsalary from the user.
+9. Display a message asking the user to enter the bonus rate per hour.
+10. Read the value for brate from the user.
+11. Calculate gsalary by multiplying workhr by brate and adding bsalary.
+12. Display the value of gsalary as the gross salary.
+13. Calculate nsalary by subtracting the product of pension and gsalary, and the product of tax and gsalary from gsalary.
+14. Display the value of nsalary as the net salary.
+15. Calculate bpay by multiplying brate by workhr.
+16. Display the value of bpay as the bonus payment.
+17. End the program.
+
