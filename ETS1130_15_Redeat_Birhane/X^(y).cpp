@@ -1,15 +1,19 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
-//this is a code to calculate x^(y);
+
 int main() {
-    double x, y, result;
+    int x, y;
     cout << "Enter the value of x: ";
     cin >> x;
     cout << "Enter the value of y: ";
     cin >> y;
-    result = pow(x, y);
-    cout << "The result of " << x << " raised to the power of " << y << " is: " << result << endl;
+
+    int result = 1;
+    for (int i = 1; i <= y; ++i) {
+        result *= x;
+    }
+
+    cout << "The result of " << x << "^" << y << " is: " << result << endl;
 
     return 0;
 }
