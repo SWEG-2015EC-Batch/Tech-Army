@@ -10,3 +10,11 @@ Algorithm
 5.Calculate the BMI using the formula: BMI = weight / (height * height).
 6.Display the calculated BMI.
 7.End
+#Flowchart
+```mermaid
+flowchart TD;
+A([start])-->B[/Enter weight in killograms/];
+B -->C[/Enter height in meters/]; 
+C -->D["BMI=weight/(height*height)"];
+ D -->E[/print BMI/]; 
+E -->F([End]); 
