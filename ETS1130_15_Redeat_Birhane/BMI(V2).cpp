@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-//this is a code to calculate BMI and display your gender
+//this is a code to display your gender and calculate BMI
 int main() {
     float height, weight, BMI;
     string g;
