@@ -25,7 +25,7 @@ main ()
      }else if(BMI>18.5&&BMI<24){
       cout<<"normal weight"<<endl;
       }else if(BMI>24&&BMI>30){
-      cout<<"over wight"<<endl;
+      cout<<"you are over wight"<<endl;
     } else{
     cout<<"obsity"<<endl;
   }
