@@ -35,13 +35,14 @@ int main() {
     else if(BMI<20.5){
       cout<<"you're under weight"<<endl;
     }
+}
      return 0;
    }
-  }
+  
     
  
 
-     return 0;
-}
+     
 
-V3
+
+
