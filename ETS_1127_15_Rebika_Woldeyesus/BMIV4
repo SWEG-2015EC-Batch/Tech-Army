@@ -21,7 +21,7 @@ main ()
   if (gender=='f'||gender=='F')
   {
       if(BMI<18.5){
-      cout<<"under weight"<<endl;
+      cout<<"you are under weight"<<endl;
      }else if(BMI>18.5&&BMI<24){
       cout<<"normal weight"<<endl;
       }else if(BMI>24&&BMI>30){
