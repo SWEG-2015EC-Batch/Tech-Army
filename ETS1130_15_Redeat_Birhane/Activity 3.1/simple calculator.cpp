@@ -24,11 +24,11 @@ int main() {
                 if (num2 != 0) {
                     cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
                 } else {
-                    cout << "Error: Division by zero is not allowed." << endl;
+                    cout << " Division by zero is not allowed." endl;
                 }
                 break;
             default:
-                cout << "Invalid operator. Please try again." << endl;
+                cout << "Invalid operator" << endl;
                 break;
         }
    return 0;
