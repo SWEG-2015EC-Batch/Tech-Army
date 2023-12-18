@@ -40,4 +40,4 @@ int main(){
   }else{
     cout<<"you entered a special character"<<endl;
   }
-}//exercise number 3
+}
