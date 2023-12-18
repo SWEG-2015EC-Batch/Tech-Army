@@ -1,1 +1,8 @@
-
+1.start
+2. Input gross salary, worked hours, and income tax rate.
+3. Calculate pension deduction (7% of gross salary).
+4. Check if worked hours exceed 40 hours:
+   a) If yes, prompt the user to enter an overtime bonus rate per hour.
+   b) Calculate overtime payment (extra hours * bonus rate).
+5. Calculate gross salary after deductions (gross salary - pension - income tax - overtime payment).
+6. Display net salary.
