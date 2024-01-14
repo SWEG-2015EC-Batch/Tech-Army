@@ -1,37 +1,32 @@
 #include<iostream>
-#include<cctype>
+#include<algorithm>
+#include<vector>
 using namespace std;
 
-void findFrequency(const string& input) {
-    int vowelCount = 0, consonantCount = 0, digitCount = 0, specialCharCount = 0;
+int main() {
+    vector<string> names;
 
-    for (char ch : input) {
-        if (isalpha(ch)) {
-            ch = tolower(ch); 
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                vowelCount++;
-            } else {
-                consonantCount++;
-            }
-        } else if (isdigit(ch)) {
-            digitCount++;
-        } else {
-            specialCharCount++;
-        }
+    
+    int numberOfNames;
+    cout << "Enter the number of names: ";
+    cin >> numberOfNames;
+
+    cout << "Enter names, one per line:" << endl;
+    cin.ignore(); // Ignore the newline character left in the buffer
+    for (int i = 0; i < numberOfNames; i++) {
+        string name;
+        getline(cin, name);
+        names.push_back(name);
     }
 
-    cout << "Vowels: " << vowelCount << endl;
-    cout << "Consonants: " << consonantCount << endl;
-    cout << "Digits: " << digitCount << endl;
-    cout << "Special Characters: " << specialCharCount << endl;
-}
+    
+    sort(names.begin(), names.end());
 
-int main() {
-    string input;
-    cout << "Enter a string: ";
-    getline(cin, input);
-
-    findFrequency(input);
+    // 
+    cout << "Names in alphabetical order:" << endl;
+    for (const string& name : names) {
+        cout << name << endl;
+    }
 
     return 0;
 }
