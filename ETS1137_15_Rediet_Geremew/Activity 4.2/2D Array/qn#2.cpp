@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    const int rows = 3;
+    const int cols = 4;
+
+    int matrix[rows][cols];
+
+  
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << "Enter value for matrix[" << i << "][" << j << "]: ";
+            cin >> matrix[i][j];
+        }
+    }
+
+    
+    for (int i = 0; i < rows; i++) {
+        int rowProduct = 1;
+        for (int j = 0; j < cols; j++) {
+            rowProduct *= matrix[i][j];
+        }
+        cout << "Product of elements in row " << i + 1 << ": " << rowProduct << endl;
+    }
+
+    for (int j = 0; j < cols; j++) {
+        int colSum = 0;
+        for (int i = 0; i < rows; i++) {
+            colSum += matrix[i][j];
+        }
+        cout << "Sum of elements in column " << j + 1 << ": " << colSum << endl;
+    }
+
+    return 0;
+}
