@@ -1,1 +1,41 @@
-#
+
+#include <iostream>
+#include <cctype>
+
+bool isPalindrome(const std::string& word) {
+    int start = 0;
+    int end = word.length() - 1;
+
+    while (start < end) {
+        
+        while (!std::isalpha(word[start]) && start < end) {
+            start++;
+        }
+        while (!std::isalpha(word[end]) && start < end) {
+            end--;
+        }
+
+        if (std::tolower(word[start]) != std::tolower(word[end])) {
+            return false;
+        }
+
+        start++;
+        end--;
+    }
+
+    return true;
+}
+
+int main() {
+    std::string input_word;
+    std::cout << "Enter a word: ";
+    std::cin >> input_word;
+
+    if (isPalindrome(input_word)) {
+        std::cout << input_word << " is a palindrome." << std::endl;
+    } else {
+        std::cout << input_word << " is not a palindrome." << std::endl;
+    }
+
+    return 0;
+}
