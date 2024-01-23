@@ -1,25 +1,23 @@
+
 #include <iostream>
-#include <vector>
 using namespace std;
-int main() {
-    vector<int> numbers;
+int main()
+{
     int num;
-    
-    cout << "Enter a list of numbers (enter -1 to stop):" << endl;
-    while (true) {
-        cin >> num;
-        if (num == -1) {
-            break;
-        }
-        numbers.push_back(num);
+    cout << "How many numbers you want to store? ";
+    cin >> num;
+    int list[num];
+    for (int i = 0; i < num; i++)
+    {
+        cout << "Enter number " << i + 1 << ": ";
+        cin >> list[i];
     }
-    
-    cout << "Even numbers in reverse order:" << endl;
-    for (int i = numbers.size() - 1; i >= 0; i--) {
-        if (numbers[i] % 2 == 0) {
-            cout << numbers[i] << " ";
+    for (int i = num - 1; i >= 0; --i)
+    {
+
+        if (list[i] % 2 == 0)
+        {
+            cout << list[i] << " , ";
         }
     }
-    cout << endl;
-    return 0;
 }
