@@ -19,7 +19,7 @@ int main() {
 
     // Input student data with case-insensitive name comparison
     for (int i = 0; i < numStudents; i++) {
-        cout << "Enter the name of student " << i + 1 << ": ";
+        cout << "Enter the full name of student " << i + 1 << ": ";
 
         // Input validation for name (ensure it is not a number)
         while (true) {
