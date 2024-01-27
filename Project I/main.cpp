@@ -56,21 +56,20 @@ int main() {
                 } else {
                     cout << "Invalid input. Please enter a valid study hours (0-24): ";
                     cin.clear(); // Clear the error flag
-                    cin.ignore(100, '\n'); // Discard incorrect input
+                    cin.ignore(100, '\n'); // Discards incorrect input
                 }
             }
         }
         cin.ignore(); // Ignore the newline character after reading the study hours
         cout << endl;
     }
-    
 
     // Display student study hours
     cout << "Student";
     for (int i = 0; i < DAYS_PER_WEEK; i++) {
         cout << "\tDay " << i + 1;
     }
-    cout << "\tTotal\tAverage\n";
+    cout << "\tTotal\n";
 
     for (int i = 0; i < numStudents; i++) {
         cout << names[i];
@@ -82,12 +81,12 @@ int main() {
             totalHours += hours;
         }
 
-        float averageStudent = static_cast<float>(totalHours) / DAYS_PER_WEEK;
-        cout << "\t" << totalHours << "\t" << averageStudent << endl;
+      
+        cout << "\t" << totalHours <<endl;
     }
 
     // Calculate and display total average study hours
-    cout << "\nTotal average:\t";
+    cout << "\nAverage:\t";
     for (int day = 0; day < DAYS_PER_WEEK; day++) {
         int totalHoursPerDay = 0;
         for (int student = 0; student < numStudents; student++) {
@@ -121,10 +120,11 @@ int main() {
 
     if (searchChoice == "yes") {
         cout << "Enter the name of the student to search: ";
+        cin.ignore(); // Ignore the newline character before getline
 
         // Input validation for search name (case-insensitive)
         while (true) {
-            cin >> searchName;
+            getline(cin, searchName);
 
             // Convert entered name to lowercase for case-insensitive comparison
             for (int k = 0; k < searchName.length(); k++) {
@@ -150,7 +150,12 @@ int main() {
 
         bool found = false;
         for (int i = 0; i < numStudents; i++) {
-            if (names[i] == searchName) {
+            string lowercaseName = names[i];
+            for (int k = 0; k < lowercaseName.length(); k++) {
+                lowercaseName[k] = tolower(lowercaseName[k]);
+            }
+
+            if (lowercaseName == searchName) {
                 found = true;
                 cout << "Student found!\n";
                 cout << "Name: " << names[i] << endl;
