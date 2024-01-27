@@ -1,1 +1,23 @@
-
+Pseudocode
+1.Start
+2.Read the number of students
+3.For each student, read the name of the student.
+4.Check if the input contains only letters, print invalid message if it contains numbers 
+5.Convert the name to lowercase for case-insensitive comparison
+6.Read the study hours for each day of the week and perform data validation.
+7.Check if the input is a non-negative integer not exceeding 24 else print invalid message.
+8.Calculate total study hours for each student.
+9.Calculate average study hours for each day of the week.                                                                                                       10.Print a table of student study hours, total study hours for each student, and average study hours for each day of the week.                                                                                                                                                                                                           11.Ask the user to search for a student
+12.If searchChoice is “no” end the program.
+13.If searchChoice is "yes" then read the name of the student to search.
+ 14.Convert searchName to lowercase for case-insensitive comparison
+ 15.Check if the input contains only letters, print invalid message if it contains numbers
+16.If name is found,ask the user to choose between total study hours or study hours for a specific day else print “student not found” message.
+17.If choice is neither total nor day print invalid message
+18.If the choice is "total" then print total study hours.
+19.If choice is "day" then ask user to enter the day (1-7)
+20.If day is  a number between 1 and 7 print study hours of the day, else print invalid message.
+ 21.Ask the user if he/she wants to search again
+22.If choice is “no”,end the program
+23.If choice is yes, repeat steps 13-21
+24.End the program
