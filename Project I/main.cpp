@@ -65,24 +65,23 @@ int main() {
     }
 
     // Display student study hours
-    cout << "Student";
+    cout << "Student\t";
     for (int i = 0; i < DAYS_PER_WEEK; i++) {
         cout << "\tDay " << i + 1;
     }
     cout << "\tTotal\n";
 
     for (int i = 0; i < numStudents; i++) {
-        cout << names[i];
+        cout << names[i] << "\t";
 
         int totalHours = 0;
         for (int j = 0; j < DAYS_PER_WEEK; j++) {
             int hours = studyHours[i][j];
-            cout << "\t" << hours;
+            cout << hours << "\t";
             totalHours += hours;
         }
 
-      
-        cout << "\t" << totalHours <<endl;
+        cout << totalHours << endl;
     }
 
     // Calculate and display total average study hours
@@ -94,127 +93,130 @@ int main() {
         }
 
         float averageDay = static_cast<float>(totalHoursPerDay) / numStudents;
-        cout << "\t" << averageDay;
+        cout << fixed << setprecision(2) << averageDay << "\t";
     }
     cout << endl;
 
-    string searchName;
-    cout << "\nDo you want to search for a student? (yes/no): ";
     string searchChoice;
+    do {
+        string searchName;
+        cout << "\nDo you want to search for a student? (yes/no): ";
 
-    // Input validation for search choice
-    while (true) {
-        cin >> searchChoice;
-        for (int k = 0; k < searchChoice.length(); k++) {
-            searchChoice[k] = tolower(searchChoice[k]);
-        }
-
-        if (searchChoice == "yes" || searchChoice == "no") {
-            break;
-        } else {
-            cout << "Invalid input. Please enter 'yes' or 'no': ";
-            cin.clear(); // Clear the error flag
-            cin.ignore(100, '\n'); // Discard incorrect input
-        }
-    }
-
-    if (searchChoice == "yes") {
-        cout << "Enter the name of the student to search: ";
-        cin.ignore(); // Ignore the newline character before getline
-
-        // Input validation for search name (case-insensitive)
+        // Input validation for search choice
         while (true) {
-            getline(cin, searchName);
-
-            // Convert entered name to lowercase for case-insensitive comparison
-            for (int k = 0; k < searchName.length(); k++) {
-                searchName[k] = tolower(searchName[k]);
+            cin >> searchChoice;
+            for (int k = 0; k < searchChoice.length(); k++) {
+                searchChoice[k] = tolower(searchChoice[k]);
             }
 
-            bool isNumber = true;
-            for (int k = 0; k < searchName.length(); k++) {
-                if (!isdigit(searchName[k])) {
-                    isNumber = false;
-                    break;
-                }
-            }
-
-            if (isNumber) {
-                cout << "Invalid input. Please enter a valid name: ";
+            if (searchChoice == "yes" || searchChoice == "no") {
+                break;
+            } else {
+                cout << "Invalid input. Please enter 'yes' or 'no': ";
                 cin.clear(); // Clear the error flag
                 cin.ignore(100, '\n'); // Discard incorrect input
-            } else {
-                break; // Exit the loop if the input is a valid name
             }
         }
 
-        bool found = false;
-        for (int i = 0; i < numStudents; i++) {
-            string lowercaseName = names[i];
-            for (int k = 0; k < lowercaseName.length(); k++) {
-                lowercaseName[k] = tolower(lowercaseName[k]);
-            }
+        if (searchChoice == "yes") {
+            cout << "Enter the name of the student to search: ";
+            cin.ignore(); // Ignore the newline character before getline
 
-            if (lowercaseName == searchName) {
-                found = true;
-                cout << "Student found!\n";
-                cout << "Name: " << names[i] << endl;
+            // Input validation for search name (case-insensitive)
+            while (true) {
+                getline(cin, searchName);
 
-                cout << "Do you want to see total study hours or study hours for a specific day? (total/day): ";
-                string choice;
+                // Convert entered name to lowercase for case-insensitive comparison
+                for (int k = 0; k < searchName.length(); k++) {
+                    searchName[k] = tolower(searchName[k]);
+                }
 
-                // Input validation for choice (case-insensitive)
-                while (true) {
-                    cin >> choice;
-
-                    // Convert choice to lowercase for case-insensitive comparison
-                    for (int k = 0; k < choice.length(); k++) {
-                        choice[k] = tolower(choice[k]);
-                    }
-
-                    if (choice == "total" || choice == "day") {
-                        break; // Exit the loop if the input is valid
-                    } else {
-                        cout << "Invalid input. Please enter 'total' or 'day': ";
-                        cin.clear(); // Clear the error flag
-                        cin.ignore(100, '\n'); // Discard incorrect input
+                bool isNumber = true;
+                for (int k = 0; k < searchName.length(); k++) {
+                    if (!isdigit(searchName[k])) {
+                        isNumber = false;
+                        break;
                     }
                 }
 
-                if (choice == "total") {
-                    int total = 0;
-                    for (int day = 0; day < DAYS_PER_WEEK; day++) {
-                        total += studyHours[i][day];
-                    }
-                    cout << "Total study hours: " << total << endl;
-                } else if (choice == "day") {
-                    int day;
+                if (isNumber) {
+                    cout << "Invalid input. Please enter a valid name: ";
+                    cin.clear(); // Clear the error flag
+                    cin.ignore(100, '\n'); // Discard incorrect input
+                } else {
+                    break; // Exit the loop if the input is a valid name
+                }
+            }
 
-                    // Data validation for day input
+            bool found = false;
+            for (int i = 0; i < numStudents; i++) {
+                string lowercaseName = names[i];
+                for (int k = 0; k < lowercaseName.length(); k++) {
+                    lowercaseName[k] = tolower(lowercaseName[k]);
+                }
+
+                if (lowercaseName == searchName) {
+                    found = true;
+                    cout << "Student found!\n";
+                    cout << "Name: " << names[i] << endl;
+
+                    cout << "Do you want to see total study hours or study hours for a specific day? (total/day): ";
+                    string choice;
+
+                    // Input validation for choice (case-insensitive)
                     while (true) {
-                        cout << "Enter the day (1-7): ";
-                        cin >> day;
+                        cin >> choice;
 
-                        if (!cin.fail() && day >= 1 && day <= DAYS_PER_WEEK) {
+                        // Convert choice to lowercase for case-insensitive comparison
+                        for (int k = 0; k < choice.length(); k++) {
+                            choice[k] = tolower(choice[k]);
+                        }
+
+                        if (choice == "total" || choice == "day") {
                             break; // Exit the loop if the input is valid
                         } else {
-                            cout << "Invalid day entered. Please enter a number between 1 and 7: ";
+                            cout << "Invalid input. Please enter 'total' or 'day': ";
                             cin.clear(); // Clear the error flag
                             cin.ignore(100, '\n'); // Discard incorrect input
                         }
                     }
 
-                    cout << "Study hours for Day " << day << ": " << studyHours[i][day - 1] << endl;
-                }
+                    if (choice == "total") {
+                        int total = 0;
+                        for (int day = 0; day < DAYS_PER_WEEK; day++) {
+                            total += studyHours[i][day];
+                        }
+                        cout << "Total study hours: " << total << endl;
+                    } else if (choice == "day") {
+                        int day;
 
-                break;
+                        // Data validation for day input
+                        while (true) {
+                            cout << "Enter the day (1-7): ";
+                            cin >> day;
+
+                            if (!cin.fail() && day >= 1 && day <= DAYS_PER_WEEK) {
+                                break; // Exit the loop if the input is valid
+                            } else {
+                                cout << "Invalid day entered. Please enter a number between 1 and 7: ";
+                                cin.clear(); // Clear the error flag
+                                cin.ignore(100, '\n'); // Discard incorrect input
+                            }
+                        }
+
+                        cout << "Study hours for Day " << day << ": " << studyHours[i][day - 1] << endl;
+                    }
+
+                    break;
+                }
+            }
+
+            if (!found) {
+                cout << "Student not found." << endl;
             }
         }
-
-        if (!found) {
-            cout << "Student not found." << endl;
-        }
-    }
+    } while (searchChoice == "yes");
 
     return 0;
 }
+
